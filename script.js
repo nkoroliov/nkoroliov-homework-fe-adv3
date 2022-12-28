@@ -1,7 +1,6 @@
 // ---- 1. Отримує будь-яке число та виводить найбільшу цифру в цьому числі.
 function getMaxDigit(number) {
-    const arr = String(number).split('')
-    .map((item) => parseInt(item, 10));
+    const arr = String(number).split('').map((item) => parseInt(item, 10));
     return Math.max(...arr);
   }
 
@@ -14,10 +13,16 @@ function getMaxDigit(number) {
 
 function powerOfANumber(num, exponent) {
     let result = 1;
+    if (exponent >= 0){
     for (i = 0; i < exponent; i++) {
     result *= num; }
-    return result;
-} 
+    } else {
+        for (i = exponent; i < 0; i++) {
+            result /= num
+        }
+    }
+        return result
+}
 
 let btn2 = document.getElementById('btn2');
 btn2.onclick = function(){
@@ -38,7 +43,7 @@ btn3.onclick = function(){
 //----- 4. Вираховує суму, що залишається після оплати податку від зарабітньої плати
 
 function salaryWithTax(cash){
-let result = cash - cash * (19.5 / 100).toFixed(2);
+let result = (cash - cash * (19.5 / 100)).toFixed(2);
 return result;
 }
 
@@ -49,13 +54,13 @@ btn4.onclick = function(){
 
 //----- 5. Повертає випадкове ціле число в діапазоні від N до M.
 
-function random(min, max) {
-    return Math.ceil(Math.random() * (max - min) + min);
+function randomValue(min, max) {
+    return Math.ceil(Math.randomValue() * (max - min) + min);
 }
 
 let btn5 = document.getElementById('btn5');
 btn5.onclick = function(){
-    alert(random(+prompt('Введіть число N'), +prompt('Введіть число M')));
+    alert(randomValue(+prompt('Введіть число N'), +prompt('Введіть число M')));
 }
 
 //----- 6. Рахує скільки разів певна буква повторюється в слові.
@@ -105,14 +110,16 @@ btn10.onclick = function () {
 
 //----- 13. Видалить з речення букви, які зустрічаються більше 1 разу.
 
-function removeDuplicate(string) {
-    return string
-      .split('')
-      .filter(function(item, pos, self) {
-        return self.indexOf(item) == pos;
-      })
-      .join('');
-  }
+function removeDuplicate(str)  {
+    let string = str;
+    for (element of string) {
+        const lett = new RegExp(element, 'g');
+        if (string.match(lett)?.length > 1) {
+            string = string.replace(lett, '');
+        }
+    }
+    return string;
+} 
 
 let btn13 = document.getElementById('btn13');
 btn13.onclick = function(){
