@@ -4,8 +4,8 @@ function getMaxDigit(number) {
     return Math.max(...arr);
   }
 
-  let btn1 = document.getElementById('btn1');
-  btn1.onclick = function(){ 
+  let findMaxNum = document.getElementById('findMaxNum');
+  findMaxNum.onclick = function(){ 
   alert(getMaxDigit(+prompt('Введіть число')));
   }
 
@@ -24,8 +24,8 @@ function powerOfANumber(num, exponent) {
         return result
 }
 
-let btn2 = document.getElementById('btn2');
-btn2.onclick = function(){
+let findPowerOfANumber = document.getElementById('findPowerOfANumber');
+findPowerOfANumber.onclick = function(){
    alert(powerOfANumber(prompt('Введіть число, яке хочете піднести до степеня'), prompt('Введіть степінь')));
 }
 
@@ -35,8 +35,8 @@ function firstLetterUp(value) {
     return value[0].toUpperCase() + value.substring(1).toLowerCase();
 }
 
-let btn3 = document.getElementById('btn3');
-btn3.onclick = function(){
+let makeFirstLetterUp = document.getElementById('makeFirstLetterUp');
+makeFirstLetterUp.onclick = function(){
     alert(firstLetterUp(prompt(`Введіть ім'я`)));
 }
 
@@ -47,8 +47,8 @@ let result = (cash - cash * (19.5 / 100)).toFixed(2);
 return result;
 }
 
-let btn4 = document.getElementById('btn4');
-btn4.onclick = function(){
+let defineSalaryWithTax = document.getElementById('defineSalaryWithTax');
+defineSalaryWithTax.onclick = function(){
     alert(salaryWithTax(+prompt('Введіть суму зарплати без врахування податку')));
 }
 
@@ -58,8 +58,8 @@ function randomValue(min, max) {
     return Math.ceil(Math.randomValue() * (max - min) + min);
 }
 
-let btn5 = document.getElementById('btn5');
-btn5.onclick = function(){
+let findRandomValue = document.getElementById('findRandomValue');
+findRandomValue.onclick = function(){
     alert(randomValue(+prompt('Введіть число N'), +prompt('Введіть число M')));
 }
 
@@ -76,8 +76,8 @@ function regSum(str,lett){
     return value;
 }
 
-let btn6 = document.getElementById('btn6');
-btn6.onclick = function(){
+let countsLetterRepetitions = document.getElementById('countsLetterRepetitions');
+countsLetterRepetitions.onclick = function(){
     alert(regSum(prompt('Введіть слово'), prompt('Введіть букву')));
 }
 
@@ -91,8 +91,8 @@ function deleteLetter(str, lett) {
     return str;
 }
 
-let btn11 = document.getElementById('btn11');
-btn11.onclick = function(){
+let deletesLetter = document.getElementById('deletesLetter');
+deletesLetter.onclick = function(){
     alert(deleteLetter(prompt('Введіть речення'), prompt('Введіть букву, яку хочете видалити')));
 }
        
@@ -103,15 +103,15 @@ function isPalyndrom(str) {
     return str == str.split('').reverse('').join('');
 }
 
-let btn10 = document.getElementById('btn10');
-btn10.onclick = function () {
+let findPalyndrom = document.getElementById('findPalyndrom');
+findPalyndrom.onclick = function () {
     alert(isPalyndrom(prompt('Введіть слово для перевірки')));
 }
 
 //----- 13. Видалить з речення букви, які зустрічаються більше 1 разу.
 
 function removeDuplicate(str)  {
-    let string = str;
+    let string = str.toLowerCase();
     for (element of string) {
         const lett = new RegExp(element, 'g');
         if (string.match(lett)?.length > 1) {
@@ -121,7 +121,7 @@ function removeDuplicate(str)  {
     return string;
 } 
 
-let btn13 = document.getElementById('btn13');
-btn13.onclick = function(){
+let removesDuplicatesInsentence = document.getElementById('removesDuplicatesInsentence');
+removesDuplicatesInsentence.onclick = function(){
     alert(removeDuplicate(prompt('Введіть речення')))
 }
